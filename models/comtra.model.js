@@ -4,7 +4,10 @@ const schema = mongoose.Schema({
     name: String,
     email: String,
     city: String,
-    phone: String,
+    phone: String
+},
+{
+    collection: 'Users'
     
     
     
@@ -14,7 +17,10 @@ const schema = mongoose.Schema({
 
   name: String,
   price: String,
-  description: String,
+  description: String
+},
+{
+collection: 'Products'
   
   
 }
@@ -27,7 +33,8 @@ schema.method("toJSON", function() {
   return object;
 });
 
-module.exports = mongoose.model('User','Product', schema);
+module.exports = mongoose.model('User',schema);
+module.exports = mongoose.model('Product',schema);
 
 
 
