@@ -9,11 +9,10 @@ const schema = mongoose.Schema({
     phone: String,
     price: String,
     description: String
-    
-    
-    
-
-  
+},
+{
+  timestamps: true
+     
 }
 );
 //If you use this app with a front-end that needs id field instead of _id,
