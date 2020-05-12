@@ -1,5 +1,5 @@
-const User = require("../models/comtra.model.js");
-const Product=require("../models/comtra.model")
+var Product = require('../models/comtra.model').products;
+var User = require('../models/comtra.model').users;
 exports.create = (req, res) => {
     // Validate request
     if (!req.body.name) {
@@ -126,6 +126,7 @@ exports.deleteAll = (req, res) => {
     });
 };
 
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Products Controllers
 exports.create = (req, res) => {
@@ -138,8 +139,8 @@ exports.create = (req, res) => {
   // Create a Product
   const product = new Product({
     name: req.body.name,
-    price: req.body.email,
-    descripion: req.body.city
+    price: req.body.price,
+    description: req.body.description
     
   });
 
@@ -152,7 +153,7 @@ exports.create = (req, res) => {
     .catch(err => {
       res.status(500).send({
         message:
-          err.message || "Some error occurred while creating the User."
+          err.message || "Some error occurred while creating the Product."
       });
     });
 };
@@ -168,7 +169,7 @@ exports.findAll = (req, res) => {
     .catch(err => {
       res.status(500).send({
         message:
-          err.message || "Some error occurred while retrieving users."
+          err.message || "Some error occurred while retrieving products."
       });
     });
 };
@@ -179,13 +180,13 @@ exports.findOne = (req, res) => {
   Product.findById(id)
     .then(data => {
       if (!data)
-        res.status(404).send({ message: "Not found User with id " + id });
+        res.status(404).send({ message: "Not found Product with id " + id });
       else res.send(data);
     })
     .catch(err => {
       res
         .status(500)
-        .send({ message: "Error retrieving User with id=" + id });
+        .send({ message: "Error retrieving Product with id=" + id });
     });
 };
 //Update a Product identified by the id in the request:
@@ -204,11 +205,11 @@ exports.update = (req, res) => {
         res.status(404).send({
           message: `Cannot update Product with id=${id}. Maybe Product was not found!`
         });
-      } else res.send({ message: "User was updated successfully." });
+      } else res.send({ message: "Product was updated successfully." });
     })
     .catch(err => {
       res.status(500).send({
-        message: "Error updating User with id=" + id
+        message: "Error updating Product with id=" + id
       });
     });
 };
@@ -226,13 +227,13 @@ Product.findByIdAndRemove(id)
       });
     } else {
       res.send({
-        message: "User was deleted successfully!"
+        message: "Product was deleted successfully!"
       });
     }
   })
   .catch(err => {
     res.status(500).send({
-      message: "Could not delete User with id=" + id
+      message: "Could not delete Product with id=" + id
     });
   });
 };
@@ -243,13 +244,13 @@ exports.deleteAll = (req, res) => {
 Product.deleteMany({})
   .then(data => {
     res.send({
-      message: `${data.deletedCount} Users were deleted successfully!`
+      message: `${data.deletedCount} Products were deleted successfully!`
     });
   })
   .catch(err => {
     res.status(500).send({
       message:
-        err.message || "Some error occurred while removing all users."
+        err.message || "Some error occurred while removing all products."
     });
   });
 };

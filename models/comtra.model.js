@@ -1,27 +1,18 @@
 const mongoose = require('mongoose');
 
+
+
 const schema = mongoose.Schema({
     name: String,
     email: String,
     city: String,
-    phone: String
-},
-{
-    collection: 'Users'
+    phone: String,
+    price: String,
+    description: String
     
     
     
-},
-{
 
-
-  name: String,
-  price: String,
-  description: String
-},
-{
-collection: 'Products'
-  
   
 }
 );
@@ -32,10 +23,12 @@ schema.method("toJSON", function() {
   object.id = _id;
   return object;
 });
+var users = mongoose.model('Users', schema);
+var products = mongoose.model('Products', schema);
 
-module.exports = mongoose.model('User',schema);
-module.exports = mongoose.model('Product',schema);
-
-
+module.exports = {
+  users : users, 
+  products: products
+} 
 
 

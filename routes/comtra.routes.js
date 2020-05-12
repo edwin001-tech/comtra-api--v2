@@ -18,9 +18,30 @@ module.exports = app => {
     // Delete a user with id
     router.delete("/:id", users.delete);
   
-    // Create a new user
+    // Delete all users
+    router.delete("/", users.deleteAll);
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //Products routes
+
+    // Create a new product
+    router.post("/", users.create);
+  
+    // Retrieve all products
+    router.get("/", users.findAll);
+    
+    // Retrieve a single product with id
+    router.get("/:id", users.findOne);
+  
+    // Update a product with id
+    router.put("/:id", users.update);
+  
+    // Delete a product with id
+    router.delete("/:id", users.delete);
+  
+    // delete all products
     router.delete("/", users.deleteAll);
   
     app.use('/api/users', router);
-    app.use('/api/users',router);
+    app.use('/api/products',router);
   };
