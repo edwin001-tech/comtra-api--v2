@@ -24,10 +24,12 @@ schema.method("toJSON", function() {
 });
 var users = mongoose.model('Users', schema);
 var products = mongoose.model('Products', schema);
+var services = mongoose.model('Services', schema)
 
 module.exports = {
   users : users, 
-  products: products
+  products: products,
+  services: services
 } 
 
 

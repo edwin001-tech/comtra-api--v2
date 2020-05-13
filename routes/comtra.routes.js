@@ -1,5 +1,8 @@
 module.exports = app => {
-    const users = require("../controllers/comtra.controller.js");
+    var users = require("../controllers/comtra.controller.js");
+    var products = require("../controllers/comtra.controller.js");
+    var services = require("../controllers/comtra.controller.js");
+  
   
     var router = require("express").Router();
   
@@ -25,23 +28,47 @@ module.exports = app => {
     //Products routes
 
     // Create a new product
-    router.post("/", users.create);
+    router.post("/", products.create);
   
     // Retrieve all products
-    router.get("/", users.findAll);
+    router.get("/", products.findAll);
     
     // Retrieve a single product with id
-    router.get("/:id", users.findOne);
+    router.get("/:id", products.findOne);
   
     // Update a product with id
-    router.put("/:id", users.update);
+    router.put("/:id", products.update);
   
     // Delete a product with id
-    router.delete("/:id", users.delete);
+    router.delete("/:id", products.delete);
   
     // delete all products
-    router.delete("/", users.deleteAll);
+    router.delete("/", products.deleteAll);
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////
   
+    //Services routes
+
+    // Create a new service
+    router.post("/", services.create);
+  
+    // Retrieve all services
+    router.get("/", services.findAll);
+    
+    // Retrieve a single service with id
+    router.get("/:id", services.findOne);
+  
+    // Update a service with id
+    router.put("/:id", services.update);
+  
+    // Delete a service with id
+    router.delete("/:id", services.delete);
+  
+    // delete all services
+    router.delete("/", services.deleteAll);
+
+    
     app.use('/api/users', router);
     app.use('/api/products',router);
+    app.use('/api/services',router);
   };
