@@ -4,7 +4,7 @@ var Service = require('../models/comtra.model').services;
 exports.create = (req, res) => {
     // Validate request
     if (!req.body.name) {
-      res.status(400).send({ message: "Content can not be empty!" });
+      res.status(400).send({ message: "Content cannot be empty!" });
       return;
     }
   
@@ -130,18 +130,19 @@ exports.deleteAll = (req, res) => {
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Products Controllers
+/** 
 exports.create = (req, res) => {
   // Validate request
-  if (!req.body.name) {
+  if (!req.body.product_name) {
     res.status(400).send({ message: "Content can not be empty!" });
     return;
   }
 
   // Create a Product
   const product = new Product({
-    name: req.body.name,
-    price: req.body.price,
-    description: req.body.description
+    product_name: req.body.product_name,
+    product_price: req.body.product_price,
+    product_description: req.body.product_description
     
   });
 
@@ -160,8 +161,8 @@ exports.create = (req, res) => {
 };
 //Retrieve all Product/ find by name from the database:
 exports.findAll = (req, res) => {
-  const name = req.query.name;
-  var condition = name? { name: { $regex: new RegExp(name), $options: "i" } } : {};
+  const product_name = req.query.product_name;
+  var condition = product_name? { product_name: { $regex: new RegExp(product_name), $options: "i" } } : {};
 
   Product.find(condition)
     .then(data => {
@@ -194,7 +195,7 @@ exports.findOne = (req, res) => {
 exports.update = (req, res) => {
   if (!req.body) {
     return res.status(400).send({
-      message: "Data to update can not be empty!"
+      message: "Data to update cannot be empty!"
     });
   }
 
@@ -261,16 +262,16 @@ Product.deleteMany({})
 //Services Controllers
 exports.create = (req, res) => {
   // Validate request
-  if (!req.body.name) {
-    res.status(400).send({ message: "Content can not be empty!" });
+  if (!req.body.service_name) {
+    res.status(400).send({ message: "Content cannot be empty!" });
     return;
   }
 
   // Create a service
   const service = new Service({
-    name: req.body.name,
-    price: req.body.price,
-    description: req.body.description
+    service_name: req.body.service_name,
+    service_price: req.body.service_price,
+    service_description: req.body.service_description
     
   });
 
@@ -289,8 +290,8 @@ exports.create = (req, res) => {
 };
 //Retrieve all services/ find by name from the database:
 exports.findAll = (req, res) => {
-  const name = req.query.name;
-  var condition = name? { name: { $regex: new RegExp(name), $options: "i" } } : {};
+  const service_name = req.query.service_name;
+  var condition = service_name? { service_name: { $regex: new RegExp(service_name), $options: "i" } } : {};
 
   Service.find(condition)
     .then(data => {
@@ -384,3 +385,4 @@ Service.deleteMany({})
     });
   });
 };
+*/
