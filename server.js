@@ -37,7 +37,7 @@ app.get("/", (req, res) => {
   res.send(  "Welcome,Node.js Restful CRUD API with Node.js, Express and MongoDB." );
 });
 //require routes
-require("./routes/comtra.routes.js")(app);
+require("./routes/product.routes.js")(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 3000;
