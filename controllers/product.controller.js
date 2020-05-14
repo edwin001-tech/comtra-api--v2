@@ -90,7 +90,7 @@ exports.update = (req, res) => {
 exports.delete = (req, res) => {
 const id = req.params.id;
 
-Product.findByIdAndRemove(id)
+Product.findByIdAndRemove(id, req.body, { useFindAndModify: false })
   .then(data => {
     if (!data) {
       res.status(404).send({
