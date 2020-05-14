@@ -33,23 +33,7 @@ module.exports = app => {
   
     //Services routes
 
-    // Create a new service
-    router.post("/", services.create);
-  
-    // Retrieve all services
-    router.get("/", services.findAll);
     
-    // Retrieve a single service with id
-    router.get("/:id", services.findOne);
-  
-    // Update a service with id
-    router.put("/:id", services.update);
-  
-    // Delete a service with id
-    router.delete("/:id", services.delete);
-  
-    // delete all services
-    router.delete("/", services.deleteAll);
 
     
     app.use('/api/users', router);

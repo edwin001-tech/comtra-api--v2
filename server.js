@@ -38,6 +38,7 @@ app.get("/", (req, res) => {
 });
 //require routes
 require("./routes/product.routes.js")(app);
+require("./routes/service.routes.js")(app)
 
 // set port, listen for requests
 const PORT = process.env.PORT || 3000;
