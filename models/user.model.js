@@ -4,15 +4,10 @@ const mongoose = require('mongoose');
 
 const schema = mongoose.Schema({
     name: String,
-    //product_name: String,
-    //service_name: String,
     email: String,
     city: String,
-    phone: String,
-    //product_price: String,
-    //product_description: String,
-    //service_price: String,
-    //service_description: String
+    phone: String
+    
     
 },
 {
@@ -27,14 +22,7 @@ schema.method("toJSON", function() {
   object.id = _id;
   return object;
 });
-var users = mongoose.model('Users', schema);
-//var products = mongoose.model('Products', schema);
-//var services = mongoose.model('Services', schema)
 
-module.exports = {
-  users : users 
-  //products: products,
-  //services: services
-} 
 
+module.exports = mongoose.model('User', schema)
 

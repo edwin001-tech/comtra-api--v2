@@ -1,7 +1,6 @@
 module.exports = app => {
-    var users = require("../controllers/user.controller.js");
-    var products = require("../controllers/user.controller.js");
-    var services = require("../controllers/user.controller.js");
+    const users = require("../controllers/user.controller.js");
+    
   
   
     var router = require("express").Router();
@@ -24,19 +23,6 @@ module.exports = app => {
     // Delete all users
     router.delete("/", users.deleteAll);
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    //Products routes
-
-    
-
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  
-    //Services routes
-
-    
-
-    
     app.use('/api/users', router);
-    app.use('/api/products',router);
-    app.use('/api/services',router);
-  };
+    
+  }
