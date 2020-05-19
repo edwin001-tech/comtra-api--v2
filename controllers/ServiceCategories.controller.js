@@ -7,13 +7,13 @@ exports.create = (req, res) => {
     }
   
     // Create a service
-    const servicecategories = new ProductCategories({
+    const servicecategories = new ServiceCategories({
       name: req.body.name,
       
     });
   
     // Save category in the database
-    ServiceCategories
+    servicecategories
       .save(servicecategories)
       .then(data => {
         res.send(data);

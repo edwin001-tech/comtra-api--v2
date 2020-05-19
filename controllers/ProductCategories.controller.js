@@ -13,7 +13,7 @@ exports.create = (req, res) => {
     });
   
     // Save category in the database
-    ProductCategories
+    productcategories
       .save(productcategories)
       .then(data => {
         res.send(data);

@@ -1,7 +1,8 @@
-const mongoose = require("mongoose")
+const mongoose = require('mongoose')
 
 const schema = mongoose.Schema({
     name: String,
+
 },
 {
     timestamps: true
@@ -14,4 +15,5 @@ schema.method("toJSON", function() {
     object.id = _id;
     return object;
   });
-module.exports = mongoose.model('ServiceCategories', schema)
+
+module.exports= mongoose.model('Feedback', schema)

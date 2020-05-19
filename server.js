@@ -41,6 +41,7 @@ require("./routes/product.routes.js")(app)
 require("./routes/service.routes.js")(app)
 require("./routes/user.routes.js")(app)
 require("./routes/ProductCategories.routes.js")(app)
+require("./routes/ServiceCategories.routes.js")(app)
 
 // set port, listen for requests
 const PORT = process.env.PORT || 3000;

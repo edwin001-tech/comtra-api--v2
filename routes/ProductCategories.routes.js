@@ -6,10 +6,10 @@ module.exports = app => {
     var router = require("express").Router();
   
     // Create a new category
-    router.post("/", productcategories.productcategories);
+    router.post("/", productcategories.create);
   
     // Retrieve all categories
-    router.get("/", productcategories.productcategories);
+    router.get("/", productcategories.findAll);
     
     // Retrieve a single category with id
     router.get("/:id", productcategories.findOne);
