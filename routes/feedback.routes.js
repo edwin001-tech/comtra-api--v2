@@ -5,10 +5,10 @@ module.exports = app => {
   
     var router = require("express").Router();
   
-    // Create a new User
+    // Create a new feedback
     router.post("/", feedback.create);
   
-    // Retrieve all users
+    // Retrieve all feedbacks
     router.get("/", feedback.findAll);
     
     // Retrieve a single user with id

@@ -58,3 +58,53 @@ router.delete("/:id", services.delete);
 
 // delete all services
 router.delete("/", services.deleteAll);
+
+
+
+api/ product categories
+// Create a new category
+router.post("/", productcategories.create);
+  
+// Retrieve all categories
+router.get("/", productcategories.findAll);
+    
+// Retrieve a single category with id
+router.get("/:id", productcategories.findOne);
+  
+// Update a category with id
+router.put("/:id", productcategories.update);
+  
+// Delete a category with id
+router.delete("/:id", productcategories.delete);
+  
+// Delete all category
+router.delete("/", productcategories.deleteAll);
+
+
+api/ service categories
+// Create a new category
+router.post("/", servicecategories.create);
+  
+// Retrieve all categories
+router.get("/", servicecategories.findAll);
+    
+// Retrieve a category  with id
+router.get("/:id", servicecategories.findOne);
+  
+// Update a category with id
+router.put("/:id", servicecategories.update);
+  
+// Delete a category with id
+router.delete("/:id", servicecategories.delete);
+  
+// Delete all categories
+router.delete("/", servicecategories.deleteAll);
+
+
+api/ feedback
+// Create a new feedback
+router.post("/", feedback.create);
+  
+// Retrieve all feedbacks
+router.get("/", feedback.findAll);
+
