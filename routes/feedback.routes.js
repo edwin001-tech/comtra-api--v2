@@ -12,16 +12,16 @@ module.exports = app => {
     router.get("/", feedback.findAll);
     
     // Retrieve a single user with id
-    router.get("/:id", feedback.findOne);
+   // router.get("/:id", feedback.findOne);
   
     // Update a user with id
-    router.put("/:id", feedback.update);
+   // router.put("/:id", feedback.update);
   
     // Delete a user with id
-    router.delete("/:id", feedback.delete);
+   // router.delete("/:id", feedback.delete);
   
     // Delete all users
-    router.delete("/", feedback.deleteAll);
+   // router.delete("/", feedback.deleteAll);
 
     app.use('/api/feedback', router);
     
