@@ -1,4 +1,4 @@
-const Feedback = require('../models/Feedback.model')
+const Feedback = require('../models/feedback.model')
 exports.create = (req, res) => {
     // Validate request
     if (!req.body.feedback) {
@@ -21,7 +21,7 @@ exports.create = (req, res) => {
       .catch(err => {
         res.status(500).send({
           message:
-            err.message || "Some error occurred while creating the category."
+            err.message || "Some error occurred while creating the feedback."
         });
       });
   };
@@ -41,6 +41,8 @@ exports.create = (req, res) => {
         });
       });
   };
+  /** 
+   
   //Find a single feedback with an id:
   exports.findOne = (req, res) => {
     const id = req.params.id;
@@ -123,4 +125,4 @@ exports.create = (req, res) => {
     });
   };
   
-  
+  */
