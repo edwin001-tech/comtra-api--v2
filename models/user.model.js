@@ -1,10 +1,13 @@
 const mongoose = require('mongoose');
+const uniqueValidator = require('mongoose-unique-validator');
 
 
 
 const schema = mongoose.Schema({
     name: String,
-    email: String,
+    email: { type: String,
+            unique:true
+    },
     city: String,
     phone: String
     
@@ -23,6 +26,6 @@ schema.method("toJSON", function() {
   return object;
 });
 
-
+schema.plugin(uniqueValidator, { message: 'Email already in use.' });
 module.exports = mongoose.model('User', schema)
 
