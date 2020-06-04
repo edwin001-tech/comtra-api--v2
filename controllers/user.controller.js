@@ -1,5 +1,5 @@
-const User = require('../models/user.model')
 
+const User = require('../models/user.model')
 exports.create = (req, res) => {
     // Validate request
     if (!req.body.name) {
@@ -45,7 +45,7 @@ exports.create = (req, res) => {
       });
   };
 //Find a single User with an id:
-  exports.findOne = (req, res) => {
+  exports.findOne = (authorize, (req, res) => {
     const id = req.params.id;
   
     User.findById(id)
@@ -59,7 +59,7 @@ exports.create = (req, res) => {
           .status(500)
           .send({ message: "Error retrieving User with id=" + id });
       });
-  };
+  });
  //Update a User identified by the id in the request:
   exports.update = (req, res) => {
     if (!req.body) {
