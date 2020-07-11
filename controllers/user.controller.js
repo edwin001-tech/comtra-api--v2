@@ -45,7 +45,7 @@ exports.create = (req, res) => {
       });
   };
 //Find a single User with an id:
-  exports.findOne = (authorize, (req, res) => {
+  exports.findOne = ((req, res) => {
     const id = req.params.id;
   
     User.findById(id)
